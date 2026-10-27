@@ -7,7 +7,7 @@
   <title>Uma surpresa para você ♡</title>
 
   <style>
-    /* CONFIGURAÇÕES GERAIS */
+
     * {
       margin: 0;
       padding: 0;
@@ -25,7 +25,6 @@
       color: white;
     }
 
-    /* TELA INICIAL: O MAIS SIMPLES POSSÍVEL */
     #inicio {
       position: fixed;
       inset: 0;
@@ -45,7 +44,6 @@
       cursor: pointer;
     }
 
-    /* SITE VERDADEIRO */
     #site {
       display: none;
       position: relative;
@@ -106,7 +104,6 @@
       max-width: 650px;
     }
 
-    /* PRIMEIRA SEÇÃO */
     .hero {
       min-height: 100vh;
       color: #401329;
@@ -141,7 +138,6 @@
       50% { transform: translateY(12px); }
     }
 
-    /* CARTÕES COM MENSAGENS */
     .cartao {
       width: 100%;
       max-width: 700px;
@@ -157,7 +153,6 @@
       color: #fff0f7;
     }
 
-    /* SEÇÃO ROSA E PRETO */
     .duas-cores {
       display: flex;
       gap: 15px;
@@ -174,7 +169,6 @@
     .rosa { background: #ff88c2; }
     .preto { background: #101015; }
 
-    /* CARTINHA FINAL */
     .carta {
       background: #ffe5f1;
       color: #42172e;
@@ -195,7 +189,6 @@
       font-weight: bold;
     }
 
-    /* CORAÇÕES FLUTUANDO */
     .coracoes {
       position: fixed;
       inset: 0;
@@ -254,17 +247,14 @@
 
 <body>
 
-  <!-- TELA INICIAL: ELA NÃO DESCONFIA DE NADA -->
   <div id="inicio">
     <button id="botao-inicio">clique aqui</button>
   </div>
 
-  <!-- SITE ESCONDIDO -->
   <main id="site">
 
     <div class="coracoes" id="coracoes"></div>
 
-    <!-- PARTE 1: APRESENTAÇÃO -->
     <section class="hero">
       <div class="coracao-grande">♡</div>
 
@@ -279,7 +269,6 @@
       <div class="descer">Role para baixo ↓</div>
     </section>
 
-    <!-- PARTE 2: PRIMEIRA MENSAGEM -->
     <section>
       <div class="cartao">
         <h2>Desde que você chegou... ♡</h2>
@@ -291,7 +280,6 @@
       </div>
     </section>
 
-    <!-- PARTE 3: SEGUNDA MENSAGEM -->
     <section>
       <div class="cartao">
         <h2>São apenas dois meses</h2>
@@ -304,7 +292,6 @@
       </div>
     </section>
 
-    <!-- PARTE 4: ROSA + PRETO -->
     <section>
       <div class="duas-cores">
         <div class="bolinha rosa"></div>
@@ -328,7 +315,6 @@
       </div>
     </section>
 
-    <!-- PARTE 5: MENSAGEM FINAL -->
     <section>
       <div class="carta">
         <h2>Uma cartinha para você ♡</h2>
@@ -374,18 +360,15 @@
 
     let intervaloCoracoes;
 
-    // REVELAR O SITE QUANDO CLICAR
     botao.addEventListener("click", function () {
       inicio.style.display = "none";
       site.classList.add("ativo");
 
       window.scrollTo(0, 0);
 
-      // Começar os corações animados
       intervaloCoracoes = setInterval(criarCoracao, 650);
     });
 
-    // CRIAR CORAÇÕES FLUTUANTES
     function criarCoracao() {
       const coracao = document.createElement("span");
 
@@ -399,7 +382,6 @@
 
       coracoes.appendChild(coracao);
 
-      // Remover corações antigos para não pesar
       coracao.addEventListener("animationend", function () {
         coracao.remove();
       });
